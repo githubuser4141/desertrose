@@ -209,3 +209,4 @@ tools/MapAtmosFixer/MapAtmosFixer/bin/*
 /_maps/**/backup/
 /_maps/templates.dm
 config/admins.txt
+config/admins.txt
