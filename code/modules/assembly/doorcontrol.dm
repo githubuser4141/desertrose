@@ -17,12 +17,11 @@
 			id = SSmapping.get_obfuscated_id(id)
 	return ..()
 
-/obj/item/assembly/control/examine(mob/user)
-	. = ..()
-	if(id && show_id)
-		. += "<span class='notice'>Its channel ID is '[id]'.</span>"
-	if(can_change_id)
-		. += "<span class='notice'>Use in hand to change ID.</span>"
+/obj/item/assembly/control/multitool_act(mob/living/user)
+	var/change_id = input("Set the shutters/blast door/blast door controllers ID. It must be a number between 1 and 100.", "ID", id) as num|null
+	if(change_id)
+		id = clamp(round(change_id, 1), 1, 100)
+		to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
 
 /obj/item/assembly/control/attack_self(mob/living/user)
 	. = ..()
