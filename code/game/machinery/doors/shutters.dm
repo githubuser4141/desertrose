@@ -8,15 +8,11 @@
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 75, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
 	damage_deflection = 20
 	max_integrity = 400
-	recipe_type = /datum/crafting_recipe/shutters
 
 /obj/machinery/door/poddoor/shutters/preopen
 	icon_state = "open"
 	density = FALSE
 	opacity = 0
-
-/obj/machinery/door/poddoor/shutters/bumpopen()
-	return
 
 // The below shutters are the original ones from the TG codebase. They are remaining as "secure" shutters. If anyone wants to improve their animation, feel free.
 // The original shutters are now shutters_old.dmi; copy the naming format of the files into new a new .dmi to add new shutters that work with the poddoor code for animating the doors.

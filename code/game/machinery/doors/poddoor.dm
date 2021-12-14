@@ -14,6 +14,7 @@
 	armor = list("melee" = 50, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 70
+<<<<<<< HEAD
 	var/datum/crafting_recipe/recipe_type = /datum/crafting_recipe/blast_doors
 	var/deconstruction = BLASTDOOR_FINISHED // deconstruction step
 	//poddoor = TRUE
@@ -81,6 +82,9 @@
 		else if(deconstruction == BLASTDOOR_NEEDS_WIRES)
 			. += "<span class='notice'>The <i>wires</i> have been removed and it's ready to be <b>sliced apart</b>.</span>"
 
+=======
+	poddoor = TRUE
+>>>>>>> parent of 7c39adc75b (blast doors 1.0)
 
 /obj/machinery/door/poddoor/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
 	id = "[idnum][id]"
@@ -92,13 +96,11 @@
 
 /obj/machinery/door/poddoor/ert
 	desc = "A heavy duty blast door that only opens for dire emergencies."
-	ertblast = TRUE
 
 //special poddoors that open when emergency shuttle docks at centcom
 /obj/machinery/door/poddoor/shuttledock
 	var/checkdir = 4	//door won't open if turf in this dir is `turftype`
 	var/turftype = /turf/open/space
-	ertblast = TRUE
 
 /obj/machinery/door/poddoor/shuttledock/proc/check()
 	var/turf/T = get_step(src, checkdir)
